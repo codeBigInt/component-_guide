@@ -1,15 +1,94 @@
-import React from "react"
+import React from "react";
 
 export default function GettingStarted() {
   return (
     <section className="w-full flex flex-col gap-[30px] my-[50px]">
-        <h2 className="text-[24px] leading-[32px] font-bold">Getting Started</h2><div className="flex flex-col w-full gap-[50px]"><p>To start working on the bingo frontend project, you will first need to clone the repo to your local machine/computer as forking is disabled to help restrict access to the repository.</p><div className="w-full flex flex-col gap-[10px]"><h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Cloning the repository</h3><p>You can clone the repository by opening your chosen programming IDE, preferably Visual Studio Code and going over to the terminal.</p><p>If you have a specific location you would like to clone the project into instead, then you should run the below code:</p><div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]"><p className="text-gray-100"><span className="text-yellow-300">cd</span> C:\Users\*your user folder*\*preferred folder in your user&apos;s directory*</p></div><p>It should look like mine below:</p><div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]"><p className="text-gray-100"><span className="text-yellow-300">cd</span> C:\Users\User\Documents\hng_projects</p></div><p>With the web URL leading to the project on GitHub, you key in the syntax for git clone in the terminal window. So the syntax should look like this when you are done typing before hitting enter:</p><div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]"><p className="text-gray-100"><span className="text-yellow-300">git</span> clone https://github.com/hngprojects/bingo_fe.git</p></div><p>After hitting enter, the project should clone into the selected destination of your choice on your local machine.</p><p>You should then open the folder on your terminal, using:</p><div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]"><p className="text-gray-100"><span className="text-yellow-300">cd</span> bingo_fe</p></div></div><div className="w-full flex flex-col gap-[10px]"><h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Changing Branches</h3><p>Before making changes, commits, or pushing to the remote repository, you are required to create a seperate branch for your feature/page.</p><p>The dev branch is the default branch for the repository as this is where you would pull changes from and reviewers would merge your branch to.</p><p>The general rule for creating your branch is to start the branch name with &apos;feat&apos; if you are working on a feature or component, or &apos;page&apos; if you are working on a full page.</p><p>Then you should state the name of the component/feature/page you are working on. So your branch name should look like &apos;feat/game-card-selection-component&apos;. Your code for creating your branch should look the one below:</p><div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]"><p className="text-gray-100"><span className="text-yellow-300">git</span> checkout <span className="text-gray-600">-b</span> feat/game-card-selection-component</p></div></div><div className="w-full flex flex-col gap-[10px]"><h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Adding upstream</h3><p>To pull recent changes from the remote GitHub repo, you will need to add the web URL leading to the repository.</p><p>Run the code below to do that.</p><div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]"><p className="text-gray-100"><span className="text-yellow-300">git</span> remote add upstream https://github.com/hngprojects/bingo_fe.git</p></div></div><div className="w-full flex flex-col gap-[10px]"><h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Installing node modules</h3><p>The project makes use of pnpm to manage its packages. So run &apos;pnpm install&apos; to install the required node modules for the project at the start.</p><div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]"><p className="text-gray-100"><span className="text-yellow-300">pnpm</span> install</p></div><p>With every new pull from the upstream, it is advisable to run the &apos;pnpm install&apos; as new packages/node modules may have been added by other developers contributing to the project. This would help eliminate errors relating to package not found when importing into a file.</p></div><div className="w-full flex flex-col gap-[10px]"><h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Merging changes to your branch</h3><p>Before creating commits and pushing, you will need fetch and merge changes made on the remote repository to your local machine to avoid merge conflicts.</p><p>After fulfilling the adding upstream step, you can go ahead and run the code below to fetch the changes:</p><div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]"><p className="text-gray-100"><span className="text-yellow-300">git</span> fetch upstream</p></div><p>Then go ahead and merge these changes from the &apos;dev&apos; branch of the upstream to your current local branch.</p><div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]"><p className="text-gray-100"><span className="text-yellow-300">git</span> merge upstream/dev</p></div></div><div className="w-full flex flex-col gap-[10px]"><h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Making commits</h3><p>When making commits, you should start your commit meassage with &apos;feat&apos; if you are working on a component/feature and &apos;page&apos; if it&apos;s a full page.</p><p>Your commit syntax should look like the code below</p><div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]"><p className="text-gray-100"><span className="text-yellow-300">git</span> commit <span className="text-gray-600">-m</span> &apos;feat: /*your commit message*/&apos;</p></div><p>Also, your commit message should be short and concise, explaining what your changes are doing.</p></div><div className="w-full flex flex-col gap-[10px]"><h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Pushing your changes/commit</h3><p>Normally, when you clone into your local machine, the web URL leading to the remote repo is added as your origin.</p><p>If not, you can run the code for adding upstream and swap &apos;upstream&apos; with &apos;origin&apos;.</p><div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]"><p className="text-gray-100"><span className="text-yellow-300">git</span> remote add origin https://github.com/hngprojects/bingo_fe.git</p></div><p>Then, push your branch to the remote repo.</p><div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]"><p className="text-gray-100"><span className="text-yellow-300">git</span> push origin feat/game-card-selection-component</p></div><p>Remember, you need to fetch recent changes on the remote repo and commit it to your branch first to avoid conflicts.</p></div></div>
+      <h2 className="text-[24px] leading-[32px] font-bold">Getting Started</h2>
+      <div className="flex flex-col w-full gap-[50px]">
+        <p>To start working on the bingo frontend project, you will first need to clone the repo to your local machine/computer, as forking is disabled to help restrict access to the repository. Ensure you have Git installed and the necessary permissions to access the repository.</p>
         <div className="w-full flex flex-col gap-[10px]">
-            <h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Creating a pull request</h3>
-            <p>After pushing your branch and its commits, you should on ahead to the remote repo of the project and make a pull request containing details of your feature/page implementation. The title of the pull request should follow the same guidelines as creating your branch as explained earlier.</p>
-            <p>And for the body, it should include screenshots of the feature you implementated, screenshots of the figma design, link to the page/component&apos;s figma design, and a short video showing how your implementation works preferably.</p>
-            <p>If your branch and its commits pass all the required tests and is the exact replica of the figma design, your branch would be merged.</p>
+          <h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Cloning the repository</h3>
+          <p>You can clone the repository by opening your chosen programming IDE, preferably Visual Studio Code, and navigating to the terminal.</p>
+          <p>If you have a specific location you would like to clone the project into, run the following command:</p>
+          <div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]">
+            <p className="text-gray-100"><span className="text-yellow-300">cd</span> C:\Users\*your user folder*\*preferred folder in your user&apos;s directory*</p>
+          </div>
+          <p>It should look like this:</p>
+          <div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]">
+            <p className="text-gray-100"><span className="text-yellow-300">cd</span> C:\Users\User\Documents\hng_projects</p>
+          </div>
+          <p>With the web URL leading to the project on GitHub, enter the following command in the terminal:</p>
+          <div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]">
+            <p className="text-gray-100"><span className="text-yellow-300">git</span> clone https://github.com/hngprojects/bingo_fe.git</p>
+          </div>
+          <p>After hitting enter, the project will clone into the selected destination on your local machine.</p>
+          <p>Navigate to the folder using:</p>
+          <div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]">
+            <p className="text-gray-100"><span className="text-yellow-300">cd</span> bingo_fe</p>
+          </div>
         </div>
+        <div className="w-full flex flex-col gap-[10px]">
+          <h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Changing Branches</h3>
+          <p>Before making changes, commits, or pushing to the remote repository, create a separate branch for your feature or page.</p>
+          <p>The `dev` branch is the default branch for the repository; this is where you would pull changes from, and reviewers will merge your branch into it.</p>
+          <p>Start your branch name with `feat` for a feature or component, or `page` for a full page. For example, `feat/game-card-selection-component`. To create your branch, use the following command:</p>
+          <div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]">
+            <p className="text-gray-100"><span className="text-yellow-300">git</span> checkout <span className="text-gray-600">-b</span> feat/game-card-selection-component</p>
+          </div>
+        </div>
+        <div className="w-full flex flex-col gap-[10px]">
+          <h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Adding Upstream</h3>
+          <p>To pull recent changes from the remote GitHub repository, you need to add the repository URL as upstream:</p>
+          <div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]">
+            <p className="text-gray-100"><span className="text-yellow-300">git</span> remote add upstream https://github.com/hngprojects/bingo_fe.git</p>
+          </div>
+          <p>Verify if the upstream remote is already set up by running <span className="text-yellow-300">git remote -v</span>.</p>
+        </div>
+        <div className="w-full flex flex-col gap-[10px]">
+          <h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Installing Node Modules</h3>
+          <p>The project uses `pnpm` to manage its packages. Ensure you have `pnpm` installed. Run <span className="text-yellow-300">pnpm install</span> to install the required node modules:</p>
+          <div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]">
+            <p className="text-gray-100"><span className="text-yellow-300">pnpm</span> install</p>
+          </div>
+          <p>After each pull from upstream, run `pnpm install` to include any new packages or modules added by other contributors, which helps avoid errors related to missing packages.</p>
+        </div>
+        <div className="w-full flex flex-col gap-[10px]">
+          <h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Merging Changes to Your Branch</h3>
+          <p>Before creating commits and pushing, fetch and merge changes from the remote repository to avoid conflicts:</p>
+          <div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]">
+            <p className="text-gray-100"><span className="text-yellow-300">git</span> fetch upstream</p>
+          </div>
+          <p>Then merge changes from the `dev` branch of the upstream to your current local branch:</p>
+          <div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]">
+            <p className="text-gray-100"><span className="text-yellow-300">git</span> merge upstream/dev</p>
+          </div>
+          <p>If there are any conflicts, resolve them, and test your branch thoroughly before pushing.</p>
+        </div>
+        <div className="w-full flex flex-col gap-[10px]">
+          <h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Making Commits</h3>
+          <p>When making commits, start your commit message with `feat` for components or features, and `page` for full pages. Use a concise, descriptive message:</p>
+          <div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]">
+            <p className="text-gray-100"><span className="text-yellow-300">git</span> commit <span className="text-gray-600">-m</span> &apos;feat: /*your commit message*/&apos;</p>
+          </div>
+        </div>
+        <div className="w-full flex flex-col gap-[10px]">
+          <h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Pushing Your Changes/Commit</h3>
+          <p>Typically, the remote URL for the repository is set as `origin` when cloning. If not, add it with:</p>
+          <div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]">
+            <p className="text-gray-100"><span className="text-yellow-300">git</span> remote add origin https://github.com/hngprojects/bingo_fe.git</p>
+          </div>
+          <p>Push your branch to the remote repository:</p>
+          <div className="w-full bg-zinc-950 break-words p-4 rounded-lg my-[10px]">
+            <p className="text-gray-100"><span className="text-yellow-300">git</span> push origin feat/game-card-selection-component</p>
+          </div>
+          <p>Ensure to fetch and commit recent changes from the remote repository before pushing to avoid conflicts.</p>
+        </div>
+        <div className="w-full flex flex-col gap-[10px]">
+          <h3 className="text-[18px] leading-[24px] font-bold mb-[10px]">Creating a Pull Request</h3>
+          <p>After pushing your branch, go to the remote repository and create a pull request. Follow the same naming conventions as your branch. Include details of your implementation, screenshots, links to Figma designs, and a short video if possible.</p>
+          <p>Ensure your pull request passes all required tests and matches the Figma design before it can be merged.</p>
+        </div>
+      </div>
     </section>
-  )
+  );
 }
