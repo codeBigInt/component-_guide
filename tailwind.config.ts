@@ -18,6 +18,56 @@ const config = {
       },
     },
     extend: {
+      boxShadow: {
+        "custom-inset": "2px 2px 0px 0px rgba(255, 255, 255, 0.40) inset, -4px -4px 0px 0px rgba(0, 0, 0, 0.32) inset",
+      },
+      colors:{
+        error:"#FF3355",
+        primary:{
+         DEFAULT: "#FFFAD9",
+         50:'#F1FBFF',
+         100: "#D5F3FF",
+         200:"#ACE8FF",
+        400:"#58D1FF",
+        500:"#00A8E8",
+        600:"#0086BA",
+        700:"#00658B",
+        800:"#00435D",
+        900:"#00222E",
+        C600:"#FF0057",
+        B900:"#332C00",
+        blue:"#00A8E8",
+        pink:"#FF4081",
+        yellow:{
+        DEFAULT:"#FFDD00",
+        300:"#FFF08C",
+        400:'#FFEB66',
+        800:"#665800",
+        900:"#332C00",
+          },
+          
+        },
+        secondary:{
+          DEFAULT: "#1A202C",
+         orange: "#FF5722",
+         green:"#4CAF50",
+        B400:"#FF9A7A",
+       
+        },
+        neutral:{
+          DEFAULT: "#1A202C",
+         500: "#9F9F9F",
+         600:"#7F7F7F",
+        800:"#404040",
+          900:"#202020",
+
+        }
+      },
+      borderRadius: {
+        lg: "0.5rem",
+        md: "calc(0.5rem - 2px)",
+        sm: "calc(0.5rem - 4px)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
