@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { useToast } from '../ui/use-toast';
 type ColorValue = string;
 type ColorGroup = {
   [key: string]: ColorValue | ColorGroup;
@@ -12,6 +13,7 @@ const colors: ColorGroup = {
     100: "#D5F3FF",
     200: "#ACE8FF",
     400: "#58D1FF",
+    blue: "#00A8E8",
     500: "#00A8E8",
     600: "#0086BA",
     700: "#00658B",
@@ -19,7 +21,6 @@ const colors: ColorGroup = {
     900: "#00222E",
     C600: "#FF0057",
     B900: "#332C00",
-    blue: "#00A8E8",
     pink: "#FF4081",
     yellow: {
       DEFAULT: "#FFDD00",
@@ -30,13 +31,11 @@ const colors: ColorGroup = {
     },
   },
   secondary: {
-    DEFAULT: "#1A202C",
     orange: "#FF5722",
     green: "#4CAF50",
     B400: "#FF9A7A",
   },
   neutral: {
-    DEFAULT: "#1A202C",
     500: "#9F9F9F",
     600: "#7F7F7F",
     800: "#404040",
@@ -45,9 +44,13 @@ const colors: ColorGroup = {
 };
 
 const ColorScheme: React.FC = () => {
+  const { toast } = useToast()
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
-    alert(`Copied ${text} to clipboard`);
+    toast({
+      description: `Copied class ${text} to clipboard`,
+    })
+  
   };
 
   const renderColors = (colorObj: any, prefix: string = ''): any => {
@@ -75,12 +78,12 @@ const ColorScheme: React.FC = () => {
 
   return (
     <>
-      <h1 className="text-2xl font-bold mt-8 mb-4">Colors Guide</h1>
-      <div className="space-y-4 p-4 w-full items-center justify-center whitespace-nowrap rounded-lg">
+      <h2 className="text-2xl font-bold mt-8 mb-4">Colors Guide</h2>
+      <div className="space-y-4 py-4 w-full items-center justify-center whitespace-nowrap rounded-lg">
         {Object.entries(colors).map(([category, colorObj]) => (
           <div key={category}>
             <h2 className="text-lg font-semibold capitalize">{category}</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div className="grid smgrid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {renderColors(colorObj, `${category}-`)}
             </div>
           </div>
