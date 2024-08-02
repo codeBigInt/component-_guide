@@ -18,6 +18,13 @@ const config = {
       },
     },
     extend: {
+      boxShadow: {
+        "custom-inset": "2px 2px 0px 0px rgba(255, 255, 255, 0.4) inset, -4px -4px 0px 0px rgba(0, 0, 0, 0.32) inset",
+      },
+      backgroundImage: {
+        "body": "linear-gradient(181deg, #F7EEE7 0.47%, #F9E9A3 277.67%, #FD0 438.32%)",
+        "navbar": "linear-gradient(181deg, #F7EEE7 100%, #F9E9A3 100%, #FD0 100%)"
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
