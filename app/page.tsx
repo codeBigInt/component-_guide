@@ -1,6 +1,7 @@
 import SampleButtons from "@/components/guides/buttons";
 import ColorScheme from "@/components/guides/colorscheme";
 import ChatInput from "@/components/guides/chatbox";
+import GettingStarted from "@/components/guides/getting-started";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <SampleButtons/>
       <ColorScheme />
       <ChatInput/>
+      <GettingStarted/>
     </main>
   );
 }
