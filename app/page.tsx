@@ -1,10 +1,13 @@
+import SampleButtons from "@/components/guides/buttons";
+import ColorScheme from "@/components/guides/colorscheme";
+import ChatInput from "@/components/guides/chatbox";
 import { ChevronDownCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Logo from './assets/bingo.webp'
 
 export default function Home() {
   return (
-    <main className="flex relative overflow-x-hidden flex-col">
+    <main className="flex min-h-screen flex-col  justify-between py-5 px-5 lg:px-24">
       <nav className="flex justify-between items-center w-full border px-5 md:px-10 fixed z-[999] bg-white bg-opacity-[0.3] backdrop-blur-[10px] py-6 ">
         <div className="flex items-center md:justify-between md:gap-5 lg:justify-normal lg:gap-20">
           <div className="flex items-center gap-5">
@@ -64,9 +67,11 @@ export default function Home() {
             <span>Color Scheme</span>
           </header>
           <h1 className="font-bold uppercase md:text-[32px] text-[24px]">COLORS</h1>
-
         </section>
+        <SampleButtons />
+        <ColorScheme />
+        <ChatInput />
       </main>
     </main>
-  );
+  )
 }
