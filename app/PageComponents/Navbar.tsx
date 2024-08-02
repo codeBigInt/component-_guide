@@ -5,7 +5,7 @@ import React from 'react'
 
 const Navbar = () => {
     return (
-        <nav className="flex justify-between items-center w-full border px-5 md:px-10 fixed z-[999] bg-white bg-opacity-[0.3] backdrop-blur-[10px] py-6 ">
+        <nav className="flex justify-between items-center left-0 top-0 w-full border-b-1 px-5 md:px-20 fixed z-[999] bg-white bg-opacity-[0.3] backdrop-blur-[10px] py-6 ">
             <div className="flex items-center md:justify-between md:gap-5 lg:justify-normal lg:gap-20">
                 <div className="flex items-center gap-5">
                     <button className="border border-black md:px-4 py-2 px-3 md:py-3 rounded-md">
