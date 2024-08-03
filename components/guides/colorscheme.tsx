@@ -78,7 +78,6 @@ const ColorScheme: React.FC = () => {
 
   return (
     <>
-      <h2 className="text-2xl font-bold mt-8 mb-4">Colors Guide</h2>
       <div className="space-y-4 py-4 w-full items-center justify-center whitespace-nowrap rounded-lg">
         {Object.entries(colors).map(([category, colorObj]) => (
           <div key={category}>
@@ -90,7 +89,7 @@ const ColorScheme: React.FC = () => {
         ))}
 
         <h2 className="text-lg font-semibold capitalize">Error</h2>
-        <div className={`flex items-center space-x-2 cursor-pointer p-2 rounded-md p-5 bg-error text-white`}
+        <div className={`flex items-center space-x-2 cursor-pointer rounded-md p-5 bg-error text-white`}
           onClick={() => copyToClipboard(`bg-error`)}>
         bg-error</div>
       
