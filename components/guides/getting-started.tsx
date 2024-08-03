@@ -3,7 +3,6 @@ import React from "react";
 export default function GettingStarted() {
   return (
     <section className="w-full flex flex-col gap-[30px] my-[50px]">
-      <h2 className="text-[24px] leading-[32px] font-bold">Getting Started</h2>
       <div className="flex flex-col w-full gap-[50px]">
         <p>To start working on the bingo frontend project, you will first need to clone the repo to your local machine/computer, as forking is disabled to help restrict access to the repository. Ensure you have Git installed and the necessary permissions to access the repository.</p>
         <div className="w-full flex flex-col gap-[10px]">
