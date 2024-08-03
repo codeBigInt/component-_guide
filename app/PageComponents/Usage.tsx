@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight'
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import { componentUse } from '../data'
@@ -41,6 +41,19 @@ const fallbackCopyTextToClipboard = (text: string) => {
 const Usage = () => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
 
+  const [fontSize, setFontSize] = useState<string>('14px');
+
+  useEffect(() => {
+    const handleResize = () => {
+      setFontSize(window.innerWidth >= 760 ? '14px' : '12px');
+    };
+
+    handleResize(); // Set initial font size
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handleCopy = (content: string, index: number) => {
     setCopiedIndex(index)
     copyToClipboard(content)
@@ -65,7 +78,7 @@ const Usage = () => {
                 lineProps={{ style: { wordBreak: 'break-word', textAlign: 'left' } }}
                 wrapLines={true}
                 showLineNumbers={true}
-                lineNumberStyle={{textAlign: 'left'}}
+                lineNumberStyle={{ textAlign: 'left' }}
                 wrapLongLines
                 language="jsx"
                 customStyle={{
@@ -75,7 +88,7 @@ const Usage = () => {
                   scrollbarWidth: 'none',
                   borderRadius: '10px',
                   overflow: 'auto',
-                  fontSize: `${window.innerWidth >= 760 ? '14px' : '12px'}`,
+                  fontSize,
                 }}
                 style={a11yDark}>
                 {item.content}
